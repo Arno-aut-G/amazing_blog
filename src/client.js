@@ -3,8 +3,8 @@ import * as contentful from 'contentful'
 
 
 export const client = contentful.createClient({
-    space: process.env.SPACE,
-    accessToken: process.env.TOKEN
+    space: "smq0z2laixnf",
+    accessToken: "ccuhMWTf73XhI2j3SjjNz66ax6NqlQE1033sOQmsUFQ"
 })
 
 

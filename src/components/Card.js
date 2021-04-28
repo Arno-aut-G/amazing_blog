@@ -1,2 +1,7 @@
-export default Card = () => {
-    return <div className="MyComponent">I'm a component!</div>;
+const Card = ({article}) => {
+    return (
+        <div className="MyComponent">
+            <p>{article.fields.title}</p>
+        </div>);
+    }
+export default Card;

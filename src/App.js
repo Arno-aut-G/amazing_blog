@@ -1,6 +1,10 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
-import { client } from './client'
+import { client } from './client';
+import NavBar from "./components/NavBar";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
+
 
 function App() {
   const [articles, setArticles] = useState([])
@@ -10,15 +14,13 @@ function App() {
       content_type: 'kocktailBlog'
     })
       .then(response => setArticles(response.items))
-  })
-
-  console.log(articles)
+  }, [])
 
   return (
     <div className="App">
-      {/* <NavBar />
-      <Main />
-      <Footer /> */}
+      <NavBar />
+      <Main articles={articles}/>
+      <Footer />
     </div>
   )
 }
