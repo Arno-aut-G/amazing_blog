@@ -11,10 +11,9 @@ function App() {
 
   useEffect(() => {
     client.getEntries(query)
-      .then(response => setArticles(response))
+      .then(response => setArticles(response.items))
   }, [query])
 
-  console.log(articles)
 
   return (
     <div className="App">
