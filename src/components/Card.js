@@ -11,7 +11,7 @@ import {Switch, Route} from 'react-router-dom';
      
 
 
-const Cards = ({article}) => {
+const Card = ({article}) => {
     console.log(article)
     const {title, image, descriptionShort} = article.fields
  /**   
@@ -116,4 +116,4 @@ const Cards = ({article}) => {
       </div>
     );
   }
-export default Cards;
+export default Card;
