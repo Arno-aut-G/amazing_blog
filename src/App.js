@@ -4,6 +4,7 @@ import { client } from './client';
 import NavBar from "./components/NavBar";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
+import ScrollUpButton from "react-scroll-up-button";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <div className="App">
+      <ScrollUpButton ContainerClassName="footButton"><button>Go back</button></ScrollUpButton>
       <NavBar />
       <Main articles={articles}/>
       <Footer />
