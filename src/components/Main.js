@@ -1,4 +1,4 @@
-import Card from "./Card"
+import Cards from "./Card"
 import {Switch, Route} from 'react-router-dom';
 
 const Main = ({articles}) => {
@@ -22,7 +22,7 @@ const Main = ({articles}) => {
             <Route path="/sweet">
                 <section className="ArticleSection">
                     { articles.map(article => 
-                        <Card article={article}/>
+                        <Cards article={article}/>
                         )
                     }
                 </section>
@@ -30,7 +30,7 @@ const Main = ({articles}) => {
             <Route path="/sour">
                 <section className="ArticleSection">
                     { articles.map(article => 
-                        <Card article={article}/>
+                        <Cards article={article}/>
                         )
                     }
                 </section>
@@ -38,7 +38,7 @@ const Main = ({articles}) => {
             <Route path="/fruity">
                 <section className="ArticleSection">
                     { articles.map(article => 
-                        <Card article={article}/>
+                        <Cards article={article}/>
                         )
                     }
                 </section>
@@ -46,7 +46,7 @@ const Main = ({articles}) => {
             <Route path="/non-alcoholic">
                 <section className="ArticleSection">
                     { articles.map(article => 
-                        <Card article={article}/>
+                        <Cards article={article}/>
                         )
                     }
                 </section>
@@ -54,11 +54,12 @@ const Main = ({articles}) => {
             <Route path="/">
                 <section className="ArticleSection">
                     { articles.map(article => 
-                        <Card article={article}/>
+                        <Cards article={article}/>
                         )
                     }
                 </section>
             </Route>
+            
         </Switch>
     )
 }
