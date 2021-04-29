@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+
+.footer {
+  background-color: #b1b7ce;
+  text-align: center;
+  height: 100px;
+  display: inline-flexbox;
+  align-items: space-around;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footButton {
+  display: flex;
+  -ms-flex-align: end;
+  align-content: space-around;
+  background-color: white;
+  text-align: center;
+  height: 35px;
+  width: 85px;
+  border: 3px solid slategray;
+  border-radius: 5px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.footButton:hover {
+  background-color: slategray;
+  border: 3px solid white;
+}
