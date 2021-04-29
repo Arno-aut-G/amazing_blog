@@ -6,6 +6,8 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 
 
+
+
 function App() {
   const [articles, setArticles] = useState([])
 
@@ -19,7 +21,9 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      
       <Main articles={articles}/>
+     
       <Footer />
     </div>
   )

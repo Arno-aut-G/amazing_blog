@@ -1,4 +1,4 @@
-import Card from "./Card"
+import Cards from "./Card"
 import {Switch, Route} from 'react-router-dom';
 
 const Main = ({articles}) => {
