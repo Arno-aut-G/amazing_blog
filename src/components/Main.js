@@ -1,15 +1,15 @@
 import Card from "./Card"
-import {Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
-const Main = ({articles}) => {
+const Main = ({ articles }) => {
 
-    const displayCards = filterTag =>{
+    const displayCards = filterTag => {
         return (articles
             .filter(article => article.metadata.tags
-            .map(tags => tags.sys.id)
-            .includes(filterTag)).map(article => 
-            <Card article={article}/>
-            ))
+                .map(tags => tags.sys.id)
+                .includes(filterTag)).map(article =>
+                    <Card article={article} />
+                ))
     }
 
     /* console.log(displayCards(articles)) */
@@ -17,8 +17,8 @@ const Main = ({articles}) => {
     return (
         <>
             {articles ? (
-            <Switch>
-                {/* <Route path="/sweet">
+                <Switch>
+                    {/* <Route path="/sweet">
                     <section className="ArticleSection">
                         { articles.map(article => 
                             <Card article={article}/>
@@ -26,28 +26,28 @@ const Main = ({articles}) => {
                         }
                     </section>
                 </Route> */}
-                <Route path="/sour">
-                    <section className="ArticleSection">
-                        {displayCards("sour")}
-                    </section>
-                </Route>
-                <Route path="/fruity">
-                    <section className="ArticleSection">
-                        {displayCards("fruity")}
-                    </section>
-                </Route>
-                <Route path="/virgin">
-                    <section className="ArticleSection">
-                        {displayCards("virgin")}
-                    </section>
-                </Route>
-                <Route path="/">
-                    <section className="ArticleSection">
-                        {articles.map(article => 
-                        <Card article={article}/>)}
-                    </section>
-                </Route>
-            </Switch>
+                    <Route path="/sour">
+                        <section className="ArticleSection">
+                            {displayCards("sour")}
+                        </section>
+                    </Route>
+                    <Route path="/fruity">
+                        <section className="ArticleSection">
+                            {displayCards("fruity")}
+                        </section>
+                    </Route>
+                    <Route path="/virgin">
+                        <section className="ArticleSection">
+                            {displayCards("virgin")}
+                        </section>
+                    </Route>
+                    <Route path="/">
+                        <section className="ArticleSection">
+                            {articles.map(article =>
+                                <Card article={article} />)}
+                        </section>
+                    </Route>
+                </Switch>
             ) : (<p>Loading....</p>)
             }
         </>
