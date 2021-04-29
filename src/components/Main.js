@@ -78,7 +78,5 @@ const Main = ({articles}) => {
         </>
     )
 }
-// .filter(article => article.fields.tags.split.includes("sour"))
-//.filter(article => article.fields.tags.includes("non-alcoholic"))
 //{displayCards(articles)}
 export default Main
