@@ -19,7 +19,6 @@ function App() {
     <div className="App">
       <NavBar input={input} setInput={setInput} setQuery={setQuery} />
       <Main articles={articles} />
-      <Randomizer />
       {/* <Footer /> */}
     </div>
   )
