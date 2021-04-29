@@ -4,18 +4,16 @@ import {Switch, Route} from 'react-router-dom';
 const Main = ({articles}) => {
     
     let map = articles.filter(article => article.metadata.tags.map(tags => tags.sys.id).includes("sour"))
-    console.log(map)/* let numArr = [1,2,3,4,5];
-     let numtimes3 = numArr.map(num => {
-        console.log(num*2);
-        return (num*3);
-    })
-    console.log(numtimes3) */
+    console.log(map)
 
-    /* const displayCards = (array) =>{
-        array.map(article => 
+    const displayCards = filterTag =>{
+        return (articles
+            .filter(article => article.metadata.tags
+            .map(tags => tags.sys.id)
+            .includes(filterTag)).map(article => 
             <Card article={article}/>
-            )
-    } */
+            ))
+    }
 
     /* console.log(displayCards(articles)) */
 
@@ -33,43 +31,23 @@ const Main = ({articles}) => {
                 </Route> */}
                 <Route path="/sour">
                     <section className="ArticleSection">
-                        { articles
-                            .filter(article => article.metadata.tags
-                            .map(tags => tags.sys.id)
-                            .includes("sour")).map(article => 
-                            <Card article={article}/>
-                            )
-                        }
+                        {displayCards("sour")}
                     </section>
                 </Route>
                 <Route path="/fruity">
                     <section className="ArticleSection">
-                        { articles
-                            .filter(article => article.metadata.tags
-                            .map(tags => tags.sys.id)
-                            .includes("fruity")).map(article => 
-                            <Card article={article}/>
-                            )
-                        }
+                        {displayCards("fruity")}
                     </section>
                 </Route>
-                <Route path="/non-alcoholic">
+                <Route path="/virgin">
                     <section className="ArticleSection">
-                        { articles
-                            .filter(article => article.metadata.tags
-                            .map(tags => tags.sys.id)
-                            .includes("non-alcoholic")).map(article => 
-                            <Card article={article}/>
-                            )
-                        }
+                        {displayCards("virgin")}
                     </section>
                 </Route>
                 <Route path="/">
                     <section className="ArticleSection">
-                        { articles.map(article => 
-                            <Card article={article}/>
-                            )
-                        }
+                        {articles.map(article => 
+                        <Card article={article}/>)}
                     </section>
                 </Route>
             </Switch>
@@ -78,5 +56,4 @@ const Main = ({articles}) => {
         </>
     )
 }
-//{displayCards(articles)}
 export default Main
