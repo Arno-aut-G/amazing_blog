@@ -2,9 +2,6 @@ import Card from "./Card"
 import {Switch, Route} from 'react-router-dom';
 
 const Main = ({articles}) => {
-    
-    let map = articles.filter(article => article.metadata.tags.map(tags => tags.sys.id).includes("sour"))
-    console.log(map)
 
     const displayCards = filterTag =>{
         return (articles
