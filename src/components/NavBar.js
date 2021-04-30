@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom"
+import './NavBar.css';
 
 const NavBar = ({ input, setInput, setQuery }) => {
 
@@ -24,6 +25,7 @@ const NavBar = ({ input, setInput, setQuery }) => {
                 <Link className="NavBarLink" to="/sour">Sour</Link>
                 <Link className="NavBarLink" to="/fruity">Fruity</Link>
                 <Link className="NavBarLink" to="/virgin">Virgin</Link>
+                <Link className="NavBarLink" to="/">All</Link>
             </div>
         </>
     )
