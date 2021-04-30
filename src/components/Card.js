@@ -46,7 +46,7 @@ const Card = ({article}) => {
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 2,
-      backgroundColor: 'gray',
+      //backgroundColor: 'gray',
       
       
     },
