@@ -1,9 +1,9 @@
 
 
-const ReadMore = ({descriptionLong}) => {
+const ShowMore = ({descriptionLong}) => {
        
 
     return <div className="MyComponent">{descriptionLong}</div>;
 }
 
-export default ReadMore
+export default ShowMore
