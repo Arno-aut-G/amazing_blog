@@ -15,14 +15,14 @@ function App() {
 
   useEffect(() => {
     client.getEntries(query)
-      .then(response => setArticles(response.items))
+      .then(response =>setArticles(response.items))
   }, [query])
 
 
   return (
     <div className="App">
       <NavBar input={input} setInput={setInput} setQuery={setQuery} />
-      <Main articles={articles} />
+      <Main articles={articles}/>
       <Footer />
     </div>
   )
