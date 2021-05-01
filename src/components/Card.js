@@ -16,6 +16,10 @@ const Card = ({ article }) => {
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 2,
+
+      //backgroundColor: 'gray',
+      
+
     },
     paper: {
       padding: theme.spacing(2),
