@@ -41,7 +41,9 @@
   background-color: #b1b7ce;
   text-align: center;
   height: 280px;
-  width: 1280px;
+  min-width: 280px;
+  max-width: 1800px;
+  width: 100%;
   bottom: 15px;
   display:inline-block;
   align-items: space-around;
