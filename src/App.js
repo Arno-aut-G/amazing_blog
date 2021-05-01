@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import ScrollUpButton from "react-scroll-up-button";
 
 
+
 function App() {
   const [articles, setArticles] = useState([])
 
@@ -19,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      <ScrollUpButton ContainerClassName="footButton"><button>Go back</button></ScrollUpButton>
+      <ScrollUpButton ContainerClassName="footButton"><button>Back to Top</button></ScrollUpButton>
       <NavBar />
       <Main articles={articles}/>
       <Footer />

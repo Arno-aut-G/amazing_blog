@@ -1,13 +1,24 @@
-const Footer = () => {
+const nDate = new Date().getFullYear();
+    console.log(nDate);
+    const Footer = () => {
     return <div className="footer">
     <container className="imgContainer">
-    <h4>Follow us on</h4>
-    <img src="twitter.png" alt="twitter" />
-    <img src="facebook.png" alt="facebook" /> 
-    <img src="instagram.png" alt="instagram" />
-    <img src="linkedin.png" alt="linkedin" />
+      <h2>Follow us on:</h2>
+        <a className="imgAnchor" href="https://twitter.com/" target="_blank" rel="noreferrer" ><img src="twitter.png" alt="twitter" /></a>
+        <a className="imgAnchor" href="https://www.facebook.com/" target="_blank" rel="noreferrer"><img src="facebook.png" alt="facebook" /></a>
+        <a className="imgAnchor" href="https://www.instagram.com/" target="_blank" rel="noreferrer"><img src="instagram.png" alt="instagram" /></a>
+        <a className="imgAnchor" href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><img src="linkedin.png" alt="linkedin" /></a>
     </container>
-    <link></link>
+    <container className="address">
+    <h3>Find us at:</h3>
+     <p>Amazing Cocktail-Blog, Musterstraße 555, 30867 Musterstadt</p>
+     </container>
+     <container className="contact">
+    <h3>Subscribe:</h3>
+    <input placeholder="Your email here"></input> 
+    <p>Copyright © {nDate}</p>
+    </container>
+    
     </div>;
 }
 export default Footer

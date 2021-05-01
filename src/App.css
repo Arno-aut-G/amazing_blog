@@ -40,8 +40,10 @@
 .footer {
   background-color: #b1b7ce;
   text-align: center;
-  height: 100px;
-  display: inline-flexbox;
+  height: 280px;
+  width: 1280px;
+  bottom: 15px;
+  display:inline-block;
   align-items: space-around;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -51,33 +53,45 @@
   right: 50px;
   bottom: 50px;
   height: 35px;
-  width: 85px;
-  font-size: 15px;
+  width: 95px;
+  font-size: 17px;
   display: flex;
   -ms-flex-align: center;
   align-content: space-around;
-  background-color: white;
+  background-color: #bd326f;
   text-align: center;
- 
-  border: 3px solid slategray;
-  border-radius: 5px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
- 
-  font-weight: bold;
+  border: 3px solid white;
+  border-radius: 10px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bolder;
 }
 
 .footButton:hover {
-  background-color: slategray;
-  border: 3px solid white;
+  background-color: white;
+  border: 3px solid #bd326f;
 }
 
 .imgContainer {
   display: flex;
-  -ms-flex-align: center;
-  align-content: space-between;
-  align-items: flex;  
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
   height: 40px;
+  margin-top: 15px;
 }
 
+.imgAnchor {
+  display: flex;
+  align-content: center;
+  height: 40px;
+  width: 40px;
+}
 
+.imgAnchor:hover {
+  height: 50px;
+}
+
+.contact-input {
+margin-bottom: 15px;
+border-radius: 3px;
+}
