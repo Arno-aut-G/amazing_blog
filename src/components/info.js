@@ -1,20 +1,20 @@
 import { Card, Grid, CardContent, CardMedia, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
-{/*import {
+/*import {
   Card, CardText, CardBody, CardLink,
   CardTitle, CardSubtitle, Row,
-} from 'reactstrap';**/}
+} from 'reactstrap';**/
 
     const useStyles = makeStyles({
         root: {
-          minHeight: 500,
-          minWidth: 300,
+          maxHeight: 500,
+          maxWidth: 300,
           margin: "5rem", 
       
         },
         media: {
-          height: 350,
+          height: 150,
         },
       });
       
@@ -29,7 +29,7 @@ import React from 'react';
             </Typography>
           </CardContent>
            <Grid container spacing={2} className={classes.gridContainer} >
-           <Grid item xs={12} sm={6} md={4}>
+           <Grid item xs={8} sm={6} md={4}>
           <Card className={classes.root} style={{marginTop: '30px'}}>
               <CardMedia
                 className={classes.media}
