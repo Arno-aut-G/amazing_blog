@@ -10,6 +10,8 @@ import ScrollUpButton from "react-scroll-up-button";
 
 
 
+
+
 function App() {
   const [articles, setArticles] = useState([])
   const [query, setQuery] = useState({ content_type: 'kocktailBlog' })
@@ -23,8 +25,11 @@ function App() {
 
   return (
     <div className="App">
+    
       <NavBar input={input} setInput={setInput} setQuery={setQuery} />
+     
       <Main articles={articles}/>
+      
       <Footer />
       <ScrollUpButton ContainerClassName="footButton"><button>Back to Top</button></ScrollUpButton>
     </div>
