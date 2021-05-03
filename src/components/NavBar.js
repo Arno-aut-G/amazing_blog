@@ -1,5 +1,5 @@
 import { Card, Grid, CardContent, CardMedia, Typography } from '@material-ui/core';
-import { black, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { Link } from "react-router-dom"
 import Button from '@material-ui/core/Button';
 import AppBar from '@material-ui/core/AppBar';
@@ -7,8 +7,6 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
-import MenuIcon from '@material-ui/icons/Menu';
-import IconButton from '@material-ui/core/IconButton';
 import LocalBarIcon from '@material-ui/icons/LocalBar';
 import { green } from '@material-ui/core/colors';
 import Example from './imgSlider';
