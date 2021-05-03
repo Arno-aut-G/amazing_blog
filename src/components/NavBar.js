@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     height: 370,
     width: 300,
     margin: "5rem",
-    
+
 
   },
   Button: {
@@ -25,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 250,
   },
-  h5:{
-    color:'white'
+  h5: {
+    color: 'white'
   },
   search: {
     position: 'relative',
@@ -84,41 +84,37 @@ const NavBar = ({ input, setInput, setQuery }) => {
   }
 
   const handleNav = (destination) => {
-    setQuery({ 'query': destination})
+    setQuery({ 'query': destination })
   }
 
   const classes = useStyles();
 
   return (
     <>
-    <div className="SearchBar">
-    <AppBar position="static" color="#c5e1a5">       
-    <Tabs  onChange={handleNav} aria-label="simple tabs example"  style={{ color: green[600], fontSize: 10 }}>
-            
-    <LocalBarIcon style={{ color: green[500], fontSize: 40, hover:'50px' }}/>
-    <Tab label="Home" onClick={()=>handleNav("")}  />
-    <Tab label="Sour" onClick={()=> handleNav("sour")} />
-    <Tab label="Fruity" onClick={()=> handleNav("fruity")} />
-    <Tab label="Virgin" onClick={()=> handleNav("virgin")}/>
-    <div className={classes.search}>
-    
-              <SearchIcon />
-              
-            <InputBase type="text" onChange={handleInput} value={input} onKeyUp={onKeyUp} placeholder={'press esc to exit search'} />
-          </div>
-      
-    </Tabs>
-    
-      </AppBar>
+      <div className="SearchBar">
+        <AppBar position="static" color="#c5e1a5">
+          <Tabs onChange={handleNav} aria-label="simple tabs example" style={{ color: green[600], fontSize: 10 }}>
+
+            <LocalBarIcon style={{ color: green[500], fontSize: 40, hover: '50px' }} />
+            <Tab label="Home" onClick={() => handleNav("")} />
+            <Tab label="Sour" onClick={() => handleNav("sour")} />
+            <Tab label="Fruity" onClick={() => handleNav("fruity")} />
+            <Tab label="Virgin" onClick={() => handleNav("virgin")} />
+          </Tabs>
+
+        </AppBar>
       </div>
+      <div className="SearchBar">
+              <input type="text" onChange={handleInput} value={input} onKeyUp={onKeyUp} placeholder={'press esc to exit search'} /><br />
+            </div>
       <Example />
       <CardContent>
-       
+
       </CardContent>
       <Grid container spacing={2} className={classes.gridContainer} >
 
         <Grid item xs={12} sm={6} md={4}>
-          <Card className={classes.root} style={{ marginTop: '30px', cursor: "pointer"}} onClick={()=> handleNav("sour")}>
+          <Card className={classes.root} style={{ marginTop: '30px', cursor: "pointer" }} onClick={() => handleNav("sour")}>
             <CardMedia
               className={classes.media}
               image='https://cdn.pixabay.com/photo/2016/11/19/13/53/margarita-1839361_960_720.jpg'
@@ -141,7 +137,7 @@ const NavBar = ({ input, setInput, setQuery }) => {
 
 
         <Grid item xs={12} sm={6} md={4}>
-          <Card className={classes.root} style={{ marginTop: '30px', cursor: "pointer"}} onClick={()=> handleNav("fruity")}>
+          <Card className={classes.root} style={{ marginTop: '30px', cursor: "pointer" }} onClick={() => handleNav("fruity")}>
             <CardMedia
               className={classes.media}
               image='https://cdn.pixabay.com/photo/2018/05/17/15/33/cocktail-3408834_960_720.jpg'
@@ -163,7 +159,7 @@ const NavBar = ({ input, setInput, setQuery }) => {
 
 
         <Grid item xs={12} sm={6} md={4}>
-          <Card className={classes.root} style={{ marginTop: '30px', cursor: "pointer"}} onClick={()=> handleNav("virgin")}>
+          <Card className={classes.root} style={{ marginTop: '30px', cursor: "pointer" }} onClick={() => handleNav("virgin")}>
 
             <CardMedia
               className={classes.media}
@@ -185,11 +181,11 @@ const NavBar = ({ input, setInput, setQuery }) => {
         </Grid>
       </Grid>
       <div className="All">
-      <Typography gutterBottom variant="h6" text-align="center">
-      <Button variant="outlined" color="primary" alignItems="center">
-        <Link to="/" onClick={()=>handleNav("")}  >All Amazing Kocktail Recipes</Link>
-      </Button>
-      </Typography>
+        <Typography gutterBottom variant="h6" text-align="center">
+          <Button variant="outlined" color="primary" alignItems="center">
+            <Link to="/" onClick={() => handleNav("")}  >All Amazing Kocktail Recipes</Link>
+          </Button>
+        </Typography>
       </div>
     </>
   );

@@ -4,6 +4,8 @@ import { client } from './client';
 import NavBar from "./components/NavBar";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
+import ScrollUpButton from "react-scroll-up-button";
+
 
 
 
@@ -29,6 +31,7 @@ function App() {
       <Main articles={articles}/>
       
       <Footer />
+      <ScrollUpButton ContainerClassName="footButton"><button>Back to Top</button></ScrollUpButton>
     </div>
   )
 }
