@@ -1,18 +1,75 @@
 import { Card, Grid, CardContent, CardMedia, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { black, makeStyles } from '@material-ui/core/styles';
 import { Link } from "react-router-dom"
+import Button from '@material-ui/core/Button';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import SearchIcon from '@material-ui/icons/Search';
+import InputBase from '@material-ui/core/InputBase';
+import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from '@material-ui/core/IconButton';
+import LocalBarIcon from '@material-ui/icons/LocalBar';
+import { green } from '@material-ui/core/colors';
+import Example from './imgSlider';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: 500,
-    minWidth: 300,
+    height: 370,
+    width: 300,
     margin: "5rem",
+    
 
+  },
+  Button: {
+    alignItems: 'center',
   },
   media: {
-    height: 350,
+    height: 250,
   },
-});
+  h5:{
+    color:'white'
+  },
+  search: {
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: '#43a047',
+    '&:hover': {
+      backgroundColor: '#ccff90',
+    },
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(120),
+      width: 'auto',
+    },
+  },
+  searchIcon: {
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inputRoot: {
+    color: 'inherit',
+  },
+  inputInput: {
+    padding: theme.spacing(5, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(2)}px)`,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      width: '12ch',
+      '&:focus': {
+        width: '20ch',
+      },
+    },
+  },
+}));
 
 const NavBar = ({ input, setInput, setQuery }) => {
 
@@ -36,14 +93,29 @@ const NavBar = ({ input, setInput, setQuery }) => {
 
   return (
     <>
-      <div className="SearchBar">
-        <input type="text" onChange={handleInput} value={input} onKeyUp={onKeyUp} placeholder={'press esc to exit search'} /><br />
-                I'm a searchbar! Believe me!
+    <div className="SearchBar">
+    <AppBar position="static" color="#c5e1a5">       
+    <Tabs  onChange={handleNav} aria-label="simple tabs example"  style={{ color: green[600], fontSize: 10 }}>
+            
+    <LocalBarIcon style={{ color: green[500], fontSize: 40, hover:'50px' }}/>
+    <Tab label="Home" onClick={()=>handleNav("")}  />
+    <Tab label="Sour" onClick={()=> handleNav("sour")} />
+    <Tab label="Fruity" onClick={()=> handleNav("fruity")} />
+    <Tab label="Virgin" onClick={()=> handleNav("virgin")}/>
+    <div className={classes.search}>
+    
+              <SearchIcon />
+              
+            <InputBase type="text" onChange={handleInput} value={input} onKeyUp={onKeyUp} placeholder={'press esc to exit search'} />
+          </div>
+      
+    </Tabs>
+    
+      </AppBar>
       </div>
+      <Example />
       <CardContent>
-        <Typography gutterBottom variant="h5" text-align="center">
-          Cocktails
-            </Typography>
+       
       </CardContent>
       <Grid container spacing={2} className={classes.gridContainer} >
 
@@ -115,7 +187,11 @@ const NavBar = ({ input, setInput, setQuery }) => {
         </Grid>
       </Grid>
       <div className="All">
-        <Link to="/" onClick={()=>handleNav("")}>All</Link>
+      <Typography gutterBottom variant="h6" text-align="center">
+      <Button variant="outlined" color="primary" alignItems="center">
+        <Link to="/" onClick={()=>handleNav("")}  >All Amazing Kocktail Recipes</Link>
+      </Button>
+      </Typography>
       </div>
     </>
   );

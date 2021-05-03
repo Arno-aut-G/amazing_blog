@@ -1,10 +1,15 @@
 import React from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import { Switch, Route, Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import { Pagination } from '@material-ui/lab';
+
+
 
 //import {    Card, CardImg, CardTitle, CardText,      CardBody, Container, Row, Col } from 'reactstrap';
 
@@ -26,11 +31,11 @@ const Card = ({ article }) => {
       margin: 'auto',
       maxWidth: 500,
       maxHeight: 800,
-      backgroundColor: '#dcedc8',
+      
     },
     image: {
-      width: 180,
-      height: 200,
+      width: 220,
+      height: 300,
     },
     img: {
       margin: 'auto',
@@ -43,6 +48,7 @@ const Card = ({ article }) => {
   const classes = useStyles();
 
   return (
+    <>
     <Switch>
       
       <Route exact path={`/${title}`}>
@@ -58,25 +64,30 @@ const Card = ({ article }) => {
               <Grid item xs={12} sm container>
                 <Grid item xs container direction="column" spacing={2}>
                   <Grid item xs>
-                    <Typography gutterBottom variant="subtitle1">
+                    <Typography gutterBottom  variant="h5">
                       {title}
                     </Typography>
                     <Typography variant="body2" gutterBottom>
                       {descriptionShort}
                     </Typography>
+                    
                   </Grid>
-                  <Grid item>
+                  
+                  <Grid item style={{textAlign: 'left'}}>
+                  <h4>Description</h4>
                     {descriptionLong}
                     <Link to={`/`}>
                       <Typography variant="body2" style={{ cursor: 'pointer' }} >
                         Show less
                       </Typography>
                     </Link>
+                    
                   </Grid>
                 </Grid>
               </Grid>
             </Grid>
           </Paper>
+          
           <br />
         </div>
       </Route>
@@ -94,7 +105,7 @@ const Card = ({ article }) => {
               <Grid item xs={12} sm container>
                 <Grid item xs container direction="column" spacing={2}>
                   <Grid item xs>
-                    <Typography gutterBottom variant="subtitle1">
+                    <Typography gutterBottom variant="subtitle1" >
                       {title}
                     </Typography>
                     <Typography variant="body2" gutterBottom>
@@ -104,7 +115,7 @@ const Card = ({ article }) => {
                   <Grid item>
                     <Link to={`/${title}`}>
                       <Typography variant="body2" style={{ cursor: 'pointer' }} >
-                        Show more
+                      <Button variant="outlined" color="primary"> Show more </Button>
                       </Typography>
                     </Link>
                   </Grid>
@@ -112,13 +123,15 @@ const Card = ({ article }) => {
               </Grid>
             </Grid>
           </Paper>
+          
           <br />
         </div>
       </Route>
 
-      
 
     </Switch >
+    </>
+    
   );
 }
 export default Card;

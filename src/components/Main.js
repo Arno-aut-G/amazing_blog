@@ -1,5 +1,5 @@
 import { Switch, Route, useParams } from 'react-router-dom';
-import Example from './imgSlider';
+import PaginationRounded from './pagination';
 import CocktailList from "./CocktailList"
 
 const Main = ({ articles}) => {
@@ -22,7 +22,7 @@ const Main = ({ articles}) => {
                 </Switch>
             ) : (<p>Loading....</p>)
             }
-            <Example />
+            <PaginationRounded />
         </>
     )
 }
